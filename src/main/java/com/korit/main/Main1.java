@@ -17,12 +17,15 @@ public class Main1 {
         Random random = new Random();
         int randomInt = random.nextInt(100);
 
-        if(randomInt % 2 == 0) {
+        if(randomInt % 2 == 0){
             testPrint = aTestService;
-        } else {
+        }else {
             testPrint = bTestService;
         }
 
+
         testPrint.print();
+
     }
+
 }
