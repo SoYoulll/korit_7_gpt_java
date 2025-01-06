@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box1" class="box">
+        <input type="">
+    </div>
+    <div class="box">
+
+    </div>
+    <script> // 항상 스크립트는 제일 아래에 둘 것(body가 닫히는 바로 위)
+
+     const idBox1 = document.getElementById("box1");
+     console.log(idBox1);
+     const boxList = document.getElementsByClassName("box");
+     console.log(boxList);
+     const divList = document.getElementsByTagName("div");
+     console.log(divList);
+
+     const idBox2 = document.querySelector("#box1"); // 단수
+     const boxList2 = document.querySelectorAll(".box"); //복수
+     const divList2 = document.querySelectorAll("div"); 
+     const box = document.querySelector(".box");
+
+
+     boxList2[1].innerHTML = "<input />";
+    </script>
+</body>
+</html>

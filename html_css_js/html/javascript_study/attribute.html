@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .img-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            margin: 200px auto;
+            border: 1px solid #222222;
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            cursor: pointer;
+
+            & > img {
+                height: 100%;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="img-box" onclick="">
+        <img src="" alt="">
+    </div>
+
+    <script>
+        let currentIndex = 0;
+    
+
+        const urlList = [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6pKamhilb5uzpk4bnsWxmsX-lMaClUoXiAw&s" ,
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUfMAdK9LkoLA19C2RHJsGIAZcsi7tTK8k2w&s" ,
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFtdSI962-MVuk47n4_Z2HC8PGtzzFvaunHQ&s" ,
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuBAR3wre4AJp8dvKju3VL8heNkFd_ujnc9Q&s" ,
+    ]
+        function handleImgChangeOnClick() {
+            if(currentIndex < urlList.length -1) {
+                currentIndex++;
+            } else {
+                currentIndex = 0;
+            }
+
+            const imgElement = document.querySelector(".img-box > img");
+            imgElement.src = urlList[currentIndex]; 
+           
+
+
+        }
+
+        window.onload = () => { // 문서가 완전히 열렸을때 작동
+            const imgElement = document.querySelector(".img-box > img");
+            imgElement.src = urlList[currentIndex]; 
+            const imgBoxElement = document.querySelector(".img-box");
+            imgBoxElement.onclick = handleImgChangeOnClick;
+            imgBoxElement.onclick = handleImgChangeOnClick;
+
+
+
+        }
+    </script>
+</body>
+</html>
